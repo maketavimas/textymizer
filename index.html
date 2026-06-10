@@ -1,52 +1,45 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>My App</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>My App</h1>
+  <div class="container">
+    <h1>My App</h1>
+    <p>Simple description of your application.</p>
 
-        <p>
-            Trumpas programos aprašymas.
-        </p>
+    <button id="downloadBtn">Download</button>
+  </div>
 
-        <button id="downloadBtn">
-            Download
-        </button>
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+
+      <h2>Enter your email</h2>
+
+      <input type="email" id="email" placeholder="you@example.com" />
+
+      <!-- TURNSTILE -->
+      <div class="cf-turnstile"
+           data-sitekey="TAVO_SITE_KEY">
+      </div>
+
+      <div class="buttons">
+        <button id="confirmBtn">Confirm</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Popup -->
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-
-            <h2>Enter your email</h2>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="your@email.com"
-            >
-
-            <div class="buttons">
-                <button id="confirmBtn">
-                    Confirm
-                </button>
-
-                <button id="cancelBtn">
-                    Cancel
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
