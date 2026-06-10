@@ -13,13 +13,13 @@
 
   <div class="container">
     <h1>My App</h1>
-    <p>Simple description of your application.</p>
+    <p>Simple app description</p>
 
     <button id="downloadBtn">Download</button>
   </div>
 
   <!-- MODAL -->
-  <div id="modal" class="modal">
+  <div id="modal" class="modal" style="display:none;">
     <div class="modal-content">
 
       <h2>Enter your email</h2>
@@ -28,7 +28,8 @@
 
       <!-- TURNSTILE -->
       <div class="cf-turnstile"
-           data-sitekey="TAVO_SITE_KEY">
+           data-sitekey="0x4AAAAAADiCqoTki0utuD0b"
+           data-callback="onTurnstileSuccess">
       </div>
 
       <div class="buttons">

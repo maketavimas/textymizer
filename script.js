@@ -5,42 +5,36 @@ const cancelBtn = document.getElementById("cancelBtn");
 
 let turnstileToken = "";
 
-/* =========================
+/* ======================
    OPEN MODAL
-========================= */
+====================== */
 downloadBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
 
-/* =========================
+/* ======================
    CLOSE MODAL
-========================= */
+====================== */
 cancelBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-/* =========================
+/* ======================
    TURNSTILE CALLBACK
-   (Cloudflare injects token here)
-========================= */
-window.onloadTurnstileCallback = function () {
-    turnstile.render('.cf-turnstile', {
-        sitekey: "TAVO_SITE_KEY",
-        callback: function (token) {
-            turnstileToken = token;
-        }
-    });
+====================== */
+window.onTurnstileSuccess = function (token) {
+    turnstileToken = token;
 };
 
-/* =========================
-   CONFIRM BUTTON
-========================= */
+/* ======================
+   CONFIRM CLICK
+====================== */
 confirmBtn.addEventListener("click", async () => {
 
     const email = document.getElementById("email").value.trim();
 
     if (!email) {
-        alert("Please enter email");
+        alert("Enter email");
         return;
     }
 
@@ -50,32 +44,30 @@ confirmBtn.addEventListener("click", async () => {
     }
 
     try {
-        const res = await fetch("https://YOUR-WORKER.workers.dev", {
+        const res = await fetch("download-gate.maketavimas.workers.dev", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: email,
-                turnstileToken: turnstileToken
+                email,
+                turnstileToken
             })
         });
 
         const data = await res.json();
 
         if (!res.ok) {
-            alert(data.error || "Download blocked");
+            alert(data.error || "Blocked");
             return;
         }
 
-        // CLOSE MODAL
         modal.style.display = "none";
 
-        // START DOWNLOAD
         window.location.href = data.downloadUrl;
 
     } catch (err) {
         console.error(err);
-        alert("Server error. Try again later.");
+        alert("Server error");
     }
 });
