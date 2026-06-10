@@ -23,5 +23,10 @@ confirmBtn.addEventListener("click", () => {
         return;
     }
 
+    // Uždarom popup
+    modal.style.display = "none";
+
+    // Pradedam failo siuntimą
     window.location.href = DOWNLOAD_URL;
+
 });
