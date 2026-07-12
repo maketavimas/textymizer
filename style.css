@@ -626,6 +626,8 @@ button { font-family: inherit; }
 
 @media (max-width: 520px) {
   .form-row-two { grid-template-columns: 1fr; }
+  .contact-form { width: 100%; }
+  .modal-content { padding: 20px; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
