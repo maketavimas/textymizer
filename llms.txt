@@ -1,0 +1,29 @@
+# Textymizer
+
+Textymizer is an offline document anonymization tool for Windows. It allows users to anonymize sensitive information in PDF and other documents before sharing them with AI tools, lawyers, clients or third parties. All processing happens locally — no documents are uploaded or transmitted anywhere.
+
+## Features
+
+- PDF anonymizer: anonymize any text in PDF documents
+- Offline processing: all document processing happens locally on the user's computer
+- No data uploads: files never leave the user's device
+- Export to Excel: export anonymized data to spreadsheet
+- Any language support
+- Windows desktop application
+
+## Versions
+
+- [Free Version](https://textymizer.com/#versions): PDF anonymization, 3 files/day, 500 characters/day Excel export
+- PDF Only (upcoming): unlimited PDF processing, multiple files at a time
+- Polyformatic (upcoming): PDF, JPG, PNG support, unlimited processing
+
+## Pages
+
+- [Home](https://textymizer.com/)
+- [Terms and Conditions](https://textymizer.com/terms.html)
+- [Privacy Policy](https://textymizer.com/privacy.html)
+- [Manual](https://textymizer.com/Textymizer_Manual.pdf)
+
+## Contact
+
+textymizer@gmail.com

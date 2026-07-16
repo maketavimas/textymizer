@@ -193,7 +193,8 @@
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="legal.css" />
+  <link rel="stylesheet" href="legal.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="legal.css" /></noscript>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
@@ -270,7 +271,7 @@
               <path d="M9 12l2 2 4-4" stroke="#16A085" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Highest level of privacy</h3>
+          <h2>Highest level of privacy</h2>
           <p>All anonymization processes take place locally on the client's computer.</p>
         </div>
         <div class="feature">
@@ -280,7 +281,7 @@
               <path d="M12 7v5l3.5 2" stroke="#16A085" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Full control</h3>
+          <h2>Full control</h2>
           <p>You decide what is private information.<br />No AI-imposed decision.</p>
         </div>
         <div class="feature">
@@ -290,7 +291,7 @@
               <path d="M4 10h16M10 4v16" stroke="#16A085" stroke-width="1.6"/>
             </svg>
           </div>
-          <h3>Database creation</h3>
+          <h2>Database creation</h2>
           <p>Anonymize a document and export any part of the data to Excel with one click.</p>
         </div>
       </div>
@@ -706,6 +707,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
